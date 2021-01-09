@@ -21,7 +21,8 @@ This application is under the MIT license.
 
 
 
-
+## Image   
+![An example of the Note Taker application](./public/assets/images/Note_Taker_Application.png)
 
 
 
