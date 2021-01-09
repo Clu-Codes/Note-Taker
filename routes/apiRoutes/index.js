@@ -27,11 +27,12 @@ router.delete('/notes/:id', (req, res) => {
     const note = findById(req.params.id, db);
 
     if (note) {
-        deleteId(note, db);
+        deleteId(note, db)
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
             JSON.stringify(db, null, 2)
         );
+        res.send('Note deleted!')
     } else {
         res.sendStatus(404);
     };
