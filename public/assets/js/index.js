@@ -58,8 +58,10 @@ const renderActiveNote = () => {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
-    noteText.value = activeNote.title;
+    noteText.value = activeNote.text;
   } else {
+    noteTitle.removeAttribute('readonly');
+    noteText.removeAttribute('readonly');
     noteTitle.value = '';
     noteText.value = '';
   }
@@ -88,11 +90,6 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  // deleteNote(noteId);
-  // getAndRenderNotes();
-  // renderActiveNote();
-  // handleNewNoteView();
-
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -110,6 +107,7 @@ const handleNoteView = (e) => {
 // Sets the activeNote to an empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
+  console.log('what is happening here');
   renderActiveNote();
 };
 
